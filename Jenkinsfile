@@ -18,7 +18,7 @@ stage('Deploy'){
 stage('Report'){
     stage ('UnitTests'){
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'dd9e4120-ca1c-4fe1-8008-16b6993948c7', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-            sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins'
+            sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins-stack'
 }
 }
 }
