@@ -13,7 +13,7 @@ stage('Build'){
 }
 
 stage('Deploy'){
-   sh 'aws s3 cp *.jar jenkins-stack-s3bucket-1lni2dkquioa6.s3.amazonaws'
+   sh 'aws s3 cp dist/rectangle-*.jar jenkins-stack-s3bucket-1lni2dkquioa6.s3.amazonaws'
 }
 stage('Report'){
     stage ('UnitTests'){
