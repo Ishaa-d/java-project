@@ -1,12 +1,9 @@
 node('linux'){
 stage('UnitTests'){
 
-   sh 'ant'
-
+  git url: 'https://github.com/Ishaa-d/java-project.git'
    sh 'ant -f test.xml -v'
-
    junit 'reports/result.xml'
-
 }
 
 stage('Build'){
