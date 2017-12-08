@@ -1,11 +1,24 @@
 node('linux'){
 stage('UnitTests'){
+
+   sh 'ant'
+
    sh 'ant -f test.xml -v'
+
    junit 'reports/result.xml'
+
 }
+
 stage('Build'){
+
+   
+
+   sh 'ant'
+
    sh 'ant -f build.xml -v'
+
 }
+
 stage('Deploy'){
    sh 'aws s3 cp *.jar jenkins-stack-s3bucket-1lni2dkquioa6.s3.amazonaws'
 }
